@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FinCore Accounting – Professional accounting, GST compliance, payroll, and financial solutions for growing businesses. Trusted by startups, SMEs, and enterprises.">
+<meta name="keywords" content="accounting services, GST compliance, payroll management, bookkeeping, financial reporting, virtual accounting, BPO">
+<meta property="og:title" content="FinCore Accounting | Financial Clarity. Business Growth.">
+<meta property="og:description" content="Professional accounting and financial services for growing businesses.">
+<meta property="og:type" content="website">
+<title>FinCore Accounting | Financial Clarity. Business Growth.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #071A52;
+    --blue: #0057FF;
+    --accent: #3B82F6;
+    --white: #FFFFFF;
+    --text: #111827;
+    --text-muted: #6B7280;
+    --text-light: #9CA3AF;
+    --surface: #F8FAFF;
+    --surface-2: #EEF2FF;
+    --border: #E5E7EB;
+    --border-blue: rgba(0,87,255,0.2);
+    --shadow-sm: 0 1px 3px rgba(7,26,82,0.08);
+    --shadow-md: 0 4px 24px rgba(7,26,82,0.10);
+    --shadow-lg: 0 12px 48px rgba(7,26,82,0.14);
+    --shadow-xl: 0 24px 80px rgba(7,26,82,0.18);
+    --radius: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+  }
+  [data-theme="dark"] {
+    --white: #0B1120;
+    --text: #F1F5F9;
+    --text-muted: #94A3B8;
+    --text-light: #64748B;
+    --surface: #0F1A2E;
+    --surface-2: #162236;
+    --border: #1E2D45;
+    --border-blue: rgba(59,130,246,0.2);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.4);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.5);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
+  }
+  /* ---- NAVBAR ---- */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+  [data-theme="dark"] .navbar { background: rgba(11,17,32,0.92); }
+  .navbar.scrolled {
+    box-shadow: var(--shadow-md);
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px; height: 72px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--navy);
+  }
+  [data-theme="dark"] .logo { color: var(--accent); }
+  .logo-mark {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 800; font-size: 16px;
+    letter-spacing: -1px;
+  }
+  .logo-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
+  .logo-text span { color: var(--blue); }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-link {
+    padding: 8px 14px; border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500;
+    transition: all 0.2s; cursor: pointer; background: none; border: none;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .nav-link:hover, .nav-link.active { background: var(--surface-2); color: var(--blue); }
+  .nav-link svg { width: 12px; height: 12px; transition: transform 0.2s; }
+  .nav-link:hover svg { transform: rotate(180deg); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 22px; border-radius: 8px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    cursor: pointer; border: none; transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--blue); color: var(--blue); background: var(--surface-2); }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--blue), #0040CC);
+    color: white; box-shadow: 0 4px 14px rgba(0,87,255,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,87,255,0.4); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-outline { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+  .btn-outline:hover { background: var(--blue); color: white; transform: translateY(-1px); }
+  .btn-white { background: white; color: var(--navy); }
+  .btn-white:hover { background: var(--surface); transform: translateY(-1px); }
+  .btn-lg { padding: 14px 28px; font-size: 15px; border-radius: 10px; }
+  .theme-toggle {
+    width: 38px; height: 38px; border-radius: 8px;
+    background: var(--surface); border: 1px solid var(--border);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; transition: all 0.2s;
+  }
+  .theme-toggle:hover { background: var(--surface-2); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+  .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; display: block; }
+  /* MEGA MENU */
+  .has-mega { position: relative; }
+  .mega-menu {
+    position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);
+    padding: 28px; min-width: 680px;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: all 0.25s ease; transform: translateX(-50%) translateY(-8px);
+  }
+  .has-mega:hover .mega-menu {
+    opacity: 1; visibility: visible; pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
+  .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .mega-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 14px; border-radius: 10px; cursor: pointer;
+    transition: all 0.2s; text-decoration: none; color: var(--text);
+  }
+  .mega-item:hover { background: var(--surface-2); }
+  .mega-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--surface-2); display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  .mega-item:hover .mega-icon { background: rgba(0,87,255,0.1); }
+  .mega-label { font-size: 13px; font-weight: 600; color: var(--text); }
+  .mega-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  /* PAGES */
+  .page { display: none; }
+  .page.active { display: block; }
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(155deg, var(--navy) 0%, #0B2E8A 45%, #0d3ba6 70%, #0057FF 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; padding-top: 72px;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.07;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridShift 20s linear infinite;
+  }
+  @keyframes gridShift {
+    0% { background-position: 0 0; }
+    100% { background-position: 60px 60px; }
+  }
+  .hero-orb {
+    position: absolute; border-radius: 50%; filter: blur(80px);
+    animation: orbFloat 8s ease-in-out infinite alternate;
+  }
+  .hero-orb-1 { width: 500px; height: 500px; background: rgba(59,130,246,0.25); top: -100px; right: -100px; }
+  .hero-orb-2 { width: 300px; height: 300px; background: rgba(0,87,255,0.3); bottom: -50px; left: 20%; animation-delay: -4s; }
+  @keyframes orbFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 30px) scale(1.08); }
+  }
+  .hero-inner {
+    max-width: 1280px; margin: 0 auto; padding: 80px 32px 100px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px; padding: 6px 16px; margin-bottom: 28px;
+    color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 500;
+  }
+  .hero-badge-dot { width: 6px; height: 6px; background: #4ADE80; border-radius: 50%; animation: pulse-dot 2s ease infinite; }
+  @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
+  .hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(42px, 5vw, 68px); font-weight: 800;
+    color: white; line-height: 1.08; letter-spacing: -2px;
+    margin-bottom: 24px;
+  }
+  .hero h1 .highlight {
+    background: linear-gradient(90deg, #60A5FA, #93C5FD);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7;
+    margin-bottom: 40px; max-width: 480px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-trust {
+    display: flex; align-items: center; gap: 16px; margin-top: 48px;
+    padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .hero-trust-text { color: rgba(255,255,255,0.5); font-size: 13px; }
+  .hero-trust-logos { display: flex; gap: 24px; }
+  .trust-logo { color: rgba(255,255,255,0.35); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  /* HERO CARD */
+  .hero-visual { display: flex; justify-content: center; align-items: center; }
+  .hero-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px; padding: 28px; width: 100%; max-width: 380px;
+    backdrop-filter: blur(20px);
+    animation: cardFloat 6s ease-in-out infinite;
+  }
+  @keyframes cardFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+  .card-title { color: rgba(255,255,255,0.6); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .card-badge { background: rgba(74,222,128,0.15); color: #4ADE80; border: 1px solid rgba(74,222,128,0.3); border-radius: 100px; padding: 3px 10px; font-size: 11px; font-weight: 600; }
+  .card-stat { margin-bottom: 20px; }
+  .card-stat-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 36px; font-weight: 800; color: white; letter-spacing: -1px; }
+  .card-stat-label { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 2px; }
+  .card-bar-group { margin-bottom: 14px; }
+  .card-bar-label { display: flex; justify-content: space-between; color: rgba(255,255,255,0.6); font-size: 12px; margin-bottom: 6px; }
+  .card-bar-track { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+  .card-bar-fill { height: 100%; border-radius: 3px; animation: barGrow 2s ease-out forwards; }
+  @keyframes barGrow { from { width: 0; } }
+  .card-bar-1 { background: linear-gradient(90deg, #60A5FA, #3B82F6); width: 92%; }
+  .card-bar-2 { background: linear-gradient(90deg, #4ADE80, #22C55E); width: 85%; }
+  .card-bar-3 { background: linear-gradient(90deg, #F59E0B, #D97706); width: 78%; }
+  .card-mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .mini-stat-val { font-size: 20px; font-weight: 700; color: white; }
+  .mini-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  /* SECTIONS */
+  .section { padding: 96px 32px; }
+  .section-sm { padding: 64px 32px; }
+  .container { max-width: 1280px; margin: 0 auto; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 16px;
+  }
+  .eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--blue); border-radius: 1px; }
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(32px, 3.5vw, 52px); font-weight: 800;
+    color: var(--text); line-height: 1.1; letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+  .section-sub { font-size: 17px; color: var(--text-muted); max-width: 580px; line-height: 1.7; margin-bottom: 56px; }
+  .text-center { text-align: center; }
+  .text-center .section-sub { margin-left: auto; margin-right: auto; }
+  /* STATS */
+  .stats-section {
+    background: var(--navy);
+    padding: 64px 32px;
+  }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+  .stat-item { text-align: center; }
+  .stat-number {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(40px, 4vw, 58px); font-weight: 800;
+    color: white; letter-spacing: -2px; line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-number span { color: var(--accent); }
+  .stat-label { color: rgba(255,255,255,0.5); font-size: 14px; font-weight: 500; }
+  .stat-divider { width: 1px; background: rgba(255,255,255,0.08); }
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,87,255,0.03), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--border-blue); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--surface-2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 20px;
+    transition: all 0.3s;
+  }
+  .service-card:hover .service-icon { background: rgba(0,87,255,0.1); transform: scale(1.05); }
+  .service-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .service-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+  .service-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 16px; color: var(--blue); font-size: 13px; font-weight: 600;
+    text-decoration: none; transition: gap 0.2s;
+  }
+  .service-link:hover { gap: 10px; }
+  /* INDUSTRIES */
+  .industries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .industry-card:hover { background: var(--white); box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--border-blue); }
+  .industry-icon { font-size: 36px; margin-bottom: 16px; display: block; }
+  .industry-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .industry-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+  .industry-tag { display: inline-flex; padding: 4px 12px; background: var(--surface-2); color: var(--blue); font-size: 12px; font-weight: 600; border-radius: 100px; margin-top: 16px; }
+  /* WHY CHOOSE */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .why-visual {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 40px; position: relative; overflow: hidden;
+  }
+  .why-visual-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .why-metric {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .why-metric-val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); letter-spacing: -1px; }
+  [data-theme="dark"] .why-metric-val { color: var(--accent); }
+  .why-metric-lbl { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .why-metric.accent { background: linear-gradient(135deg, var(--navy), var(--blue)); border: none; }
+  .why-metric.accent .why-metric-val { color: white; }
+  .why-metric.accent .why-metric-lbl { color: rgba(255,255,255,0.6); }
+  .why-list { display: flex; flex-direction: column; gap: 20px; }
+  .why-item { display: flex; gap: 16px; align-items: flex-start; }
+  .why-check {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(0,87,255,0.1); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue); font-size: 12px; margin-top: 2px;
+  }
+  .why-item-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .why-item-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+  /* TESTIMONIALS */
+  .testi-section { background: var(--surface); }
+  .testi-track { display: flex; gap: 24px; overflow: hidden; }
+  .testi-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px; min-width: 380px;
+    transition: all 0.3s;
+  }
+  .testi-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .testi-stars { color: #F59E0B; font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+  .testi-text { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 16px; flex-shrink: 0;
+  }
+  .testi-name { font-size: 14px; font-weight: 700; color: var(--text); }
+  .testi-role { font-size: 12px; color: var(--text-muted); }
+  .testi-controls { display: flex; gap: 12px; justify-content: center; margin-top: 36px; }
+  .testi-btn {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 2px solid var(--border); background: var(--white);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; transition: all 0.2s; color: var(--text);
+  }
+  .testi-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--surface-2); }
+  /* CTA BANNER */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, #0B3080 50%, var(--blue) 100%);
+    border-radius: var(--radius-xl);
+    padding: 72px 64px;
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    right: -100px; top: -100px;
+  }
+  .cta-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(28px, 3vw, 42px); font-weight: 800; color: white; letter-spacing: -1px; margin-bottom: 12px; }
+  .cta-sub { color: rgba(255,255,255,0.65); font-size: 16px; }
+  .cta-actions { display: flex; gap: 14px; flex-shrink: 0; }
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 80px 32px 32px;
+  }
+  [data-theme="dark"] footer { background: #050E22; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px; }
+  .footer-brand { }
+  .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .footer-logo-mark { width: 34px; height: 34px; background: linear-gradient(135deg, var(--accent), var(--blue)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 14px; }
+  .footer-logo-text { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 800; color: white; }
+  .footer-logo-text span { color: var(--accent); }
+  .footer-desc { color: rgba(255,255,255,0.45); font-size: 14px; line-height: 1.7; margin-bottom: 28px; }
+  .footer-social { display: flex; gap: 10px; }
+  .social-btn {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.5); font-size: 14px; cursor: pointer;
+    transition: all 0.2s; text-decoration: none;
+  }
+  .social-btn:hover { background: var(--blue); color: white; border-color: var(--blue); }
+  .footer-heading { color: rgba(255,255,255,0.5); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-link { color: rgba(255,255,255,0.45); font-size: 14px; text-decoration: none; transition: color 0.2s; cursor: pointer; }
+  .footer-link:hover { color: white; }
+  .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { color: rgba(255,255,255,0.3); font-size: 13px; }
+  .footer-legal { display: flex; gap: 24px; }
+  .footer-legal a { color: rgba(255,255,255,0.3); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+  /* NEWSLETTER */
+  .newsletter-form { display: flex; gap: 10px; max-width: 360px; margin-top: 24px; }
+  .newsletter-input {
+    flex: 1; padding: 10px 16px; border-radius: 8px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    color: white; font-size: 14px; outline: none;
+    transition: border-color 0.2s; font-family: 'Inter', sans-serif;
+  }
+  .newsletter-input::placeholder { color: rgba(255,255,255,0.35); }
+  .newsletter-input:focus { border-color: var(--accent); }
+  .newsletter-btn {
+    padding: 10px 18px; background: var(--blue); border: none; border-radius: 8px;
+    color: white; font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; font-family: 'Inter', sans-serif;
+  }
+  .newsletter-btn:hover { background: #0040CC; }
+  /* ABOUT PAGE */
+  .about-hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #0B2A7A 100%);
+    padding: 140px 32px 80px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .about-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .page-hero-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(36px, 4.5vw, 64px); font-weight: 800; color: white; letter-spacing: -2px; margin-bottom: 20px; position: relative; z-index: 1; }
+  .page-hero-sub { font-size: 18px; color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .value-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px; text-align: center;
+    transition: all 0.3s;
+  }
+  .value-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .value-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+  .value-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .value-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+  .founder-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 56px; display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start;
+  }
+  .founder-photo {
+    width: 200px; height: 200px; border-radius: 20px;
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px; color: white; font-weight: 800;
+  }
+  .founder-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; margin-bottom: 6px; }
+  .founder-role { color: var(--blue); font-size: 15px; font-weight: 600; margin-bottom: 24px; }
+  .founder-quote { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-style: italic; border-left: 3px solid var(--blue); padding-left: 20px; margin-bottom: 24px; }
+  .founder-bio { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; }
+  /* SERVICES PAGE */
+  .service-detail-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 48px; margin-bottom: 32px;
+    transition: all 0.3s;
+  }
+  .service-detail-card:hover { box-shadow: var(--shadow-lg); }
+  .service-detail-header { display: flex; align-items: flex-start; gap: 24px; margin-bottom: 32px; }
+  .service-detail-icon {
+    width: 64px; height: 64px; border-radius: 18px; flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(0,87,255,0.1), rgba(59,130,246,0.1));
+    display: flex; align-items: center; justify-content: center; font-size: 28px;
+  }
+  .service-detail-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 26px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; margin-bottom: 8px; }
+  .service-detail-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+  .service-detail-body { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  .service-detail-section h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 14px; }
+  .benefit-list { display: flex; flex-direction: column; gap: 10px; }
+  .benefit-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); }
+  .benefit-item::before { content: '✓'; width: 20px; height: 20px; background: rgba(0,87,255,0.1); color: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+  .process-steps { display: flex; flex-direction: column; gap: 12px; }
+  .process-step { display: flex; gap: 12px; align-items: flex-start; }
+  .step-num { width: 24px; height: 24px; border-radius: 50%; background: var(--blue); color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-text { font-size: 13.5px; color: var(--text-muted); line-height: 1.5; padding-top: 3px; }
+  /* INDUSTRIES PAGE */
+  .industry-detail {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    padding: 64px 0; border-bottom: 1px solid var(--border);
+  }
+  .industry-detail:last-child { border-bottom: none; }
+  .industry-detail.reverse { direction: rtl; }
+  .industry-detail.reverse > * { direction: ltr; }
+  .industry-visual {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 48px; text-align: center;
+    font-size: 72px; position: relative; overflow: hidden;
+  }
+  .industry-visual::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,87,255,0.04), transparent);
+  }
+  .industry-detail-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 36px; font-weight: 800; color: var(--text); letter-spacing: -1px; margin-bottom: 16px; }
+  .industry-detail-desc { font-size: 16px; color: var(--text-muted); line-height: 1.75; margin-bottom: 28px; }
+  .industry-detail-services { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    display: inline-flex; padding: 6px 14px;
+    background: var(--surface-2); color: var(--blue);
+    font-size: 13px; font-weight: 500; border-radius: 100px;
+    border: 1px solid var(--border-blue);
+  }
+  /* BLOG */
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .blog-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden; transition: all 0.3s; cursor: pointer;
+  }
+  .blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+  .blog-thumb {
+    height: 200px; display: flex; align-items: center; justify-content: center;
+    font-size: 48px; position: relative;
+  }
+  .blog-cat {
+    position: absolute; top: 16px; left: 16px;
+    background: var(--blue); color: white;
+    font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px;
+    letter-spacing: 0.5px;
+  }
+  .blog-body { padding: 28px; }
+  .blog-meta { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+  .blog-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.35; margin-bottom: 12px; }
+  .blog-excerpt { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+  .blog-read { display: flex; align-items: center; gap: 6px; margin-top: 16px; color: var(--blue); font-size: 13px; font-weight: 600; }
+  /* CATEGORY PILLS */
+  .cat-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
+  .cat-pill {
+    padding: 8px 20px; border-radius: 100px;
+    border: 1.5px solid var(--border); background: var(--white);
+    font-size: 14px; font-weight: 500; color: var(--text-muted);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .cat-pill:hover, .cat-pill.active { border-color: var(--blue); color: var(--blue); background: var(--surface-2); }
+  /* CAREERS */
+  .culture-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .culture-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px; text-align: center;
+  }
+  .culture-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+  .culture-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .culture-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+  .job-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 16px; transition: all 0.3s; cursor: pointer;
+  }
+  .job-card:hover { box-shadow: var(--shadow-md); border-color: var(--border-blue); transform: translateX(4px); }
+  .job-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .job-meta { display: flex; gap: 16px; }
+  .job-tag { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+  .job-badge { background: rgba(74,222,128,0.1); color: #16A34A; border: 1px solid rgba(74,222,128,0.3); padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600; }
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; }
+  .contact-info-card {
+    background: var(--navy);
+    border-radius: var(--radius-xl);
+    padding: 48px; color: white;
+  }
+  .contact-info-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; font-weight: 800; color: white; margin-bottom: 8px; }
+  .contact-info-sub { color: rgba(255,255,255,0.55); font-size: 15px; margin-bottom: 40px; line-height: 1.6; }
+  .contact-detail { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 28px; }
+  .contact-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+  .contact-detail-label { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .contact-detail-value { color: white; font-size: 15px; font-weight: 500; }
+  .whatsapp-btn {
+    display: flex; align-items: center; gap: 12px;
+    background: #25D366; border: none; border-radius: 12px;
+    padding: 16px 24px; color: white; font-size: 15px; font-weight: 700;
+    cursor: pointer; width: 100%; margin-top: 32px; transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .whatsapp-btn:hover { background: #1DA851; transform: translateY(-1px); }
+  /* FORM */
+  .contact-form-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 48px;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; padding: 12px 16px; border-radius: 10px;
+    border: 1.5px solid var(--border); background: var(--white);
+    color: var(--text); font-size: 14px; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--blue); box-shadow: 0 0 0 4px rgba(0,87,255,0.08);
+  }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-submit {
+    width: 100%; padding: 14px;
+    background: linear-gradient(135deg, var(--blue), #0040CC);
+    border: none; border-radius: 10px; color: white;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    transition: all 0.2s; font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 14px rgba(0,87,255,0.3);
+  }
+  .form-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,87,255,0.4); }
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid var(--border); padding: 24px 0; cursor: pointer;
+  }
+  .faq-question {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 16px; font-weight: 600; color: var(--text);
+  }
+  .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--surface-2); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; transition: all 0.3s; }
+  .faq-answer { font-size: 14.5px; color: var(--text-muted); line-height: 1.7; max-height: 0; overflow: hidden; transition: all 0.3s ease; padding-top: 0; }
+  .faq-item.open .faq-answer { max-height: 200px; padding-top: 16px; }
+  .faq-item.open .faq-icon { background: var(--blue); color: white; transform: rotate(45deg); }
+  /* SCROLL ANIMATION */
+  .reveal {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); margin: 0; }
+  /* PROCESS */
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .process-item { padding: 32px; text-align: center; position: relative; }
+  .process-item:not(:last-child)::after {
+    content: '→'; position: absolute; top: 48px; right: -12px;
+    font-size: 20px; color: var(--text-light); z-index: 1;
+  }
+  .process-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+    color: white; font-weight: 800; font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .process-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .process-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  /* TRUST BADGES */
+  .trust-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; align-items: center; }
+  .trust-badge {
+    text-align: center; padding: 20px; border-radius: var(--radius);
+    border: 1px solid var(--border); background: var(--surface);
+    font-size: 13px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+  .trust-badge:hover { border-color: var(--border-blue); color: var(--blue); }
+  /* MOBILE */
+  .mobile-menu {
+    display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+    background: var(--white); z-index: 999;
+    padding: 24px; overflow-y: auto;
+    transform: translateX(100%); transition: transform 0.3s ease;
+  }
+  .mobile-menu.open { display: block; transform: translateX(0); }
+  .mobile-nav-link {
+    display: block; padding: 14px 16px; border-radius: 10px;
+    font-size: 16px; font-weight: 500; color: var(--text);
+    text-decoration: none; transition: all 0.2s; cursor: pointer;
+    border: none; background: none; width: 100%; text-align: left;
+    font-family: 'Inter', sans-serif;
+  }
+  .mobile-nav-link:hover { background: var(--surface-2); color: var(--blue); }
+  .mobile-nav-section { margin-bottom: 24px; }
+  .mobile-nav-heading { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); padding: 0 16px; margin-bottom: 8px; }
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-divider { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-brand { grid-column: 1 / -1; }
+    .industries-grid { grid-template-columns: repeat(2, 1fr); }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+    .culture-grid { grid-template-columns: repeat(2, 1fr); }
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-detail-body { grid-template-columns: 1fr 1fr; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-actions .btn-ghost { display: none; }
+    .hamburger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px 80px; }
+    .hero-visual { display: none; }
+    .section { padding: 64px 24px; }
+    .section-sm { padding: 48px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .industries-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .cta-banner { flex-direction: column; padding: 48px 32px; }
+    .cta-actions { flex-direction: column; width: 100%; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .founder-card { grid-template-columns: 1fr; }
+    .industry-detail { grid-template-columns: 1fr; }
+    .industry-detail.reverse { direction: ltr; }
+    .form-row { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: repeat(3, 1fr); }
+    .service-detail-body { grid-template-columns: 1fr; }
+    .mega-menu { display: none; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo" onclick="showPage('home')">
+      <div class="logo-mark">FC</div>
+      <div class="logo-text">Fin<span>Core</span></div>
+    </a>
+    <div class="nav-links">
+      <button class="nav-link" onclick="showPage('home')">Home</button>
+      <button class="nav-link" onclick="showPage('about')">About</button>
+      <div class="has-mega">
+        <button class="nav-link">Services
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+        <div class="mega-menu">
+          <div style="margin-bottom:16px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;">Our Services</div>
+          <div class="mega-grid">
+            <a class="mega-item" onclick="showPage('services')">
+              <div class="mega-icon">📚</div>
+              <div><div class="mega-label">Bookkeeping</div><div class="mega-desc">Accurate financial records</div></div>
+            </a>
+            <a class="mega-item" onclick="showPage('services')">
+              <div class="mega-icon">🧾</div>
+              <div><div class="mega-label">GST Compliance</div><div class="mega-desc">Tax filing & returns</div></div>
+            </a>
+            <a class="mega-item" onclick="showPage('services')">
+              <div class="mega-icon">👥</div>
+              <div><div class="mega-label">Payroll</div><div class="mega-desc">Salary processing</div></div>
+            </a>
+            <a class="mega-item" onclick="showPage('services')">
+              <div class="mega-icon">💳</div>
+              <div><div class="mega-label">Accounts Payable</div><div class="mega-desc">Vendor management</div></div>
+            </a>
+            <a class="mega-item" onclick="showPage('services')">
+              <div class="mega-icon">💰</div>
+              <div><div class="mega-label">Accounts Receivable</div><div class="mega-desc">Collections management</div></div>
+            </a>
+            <a class="mega-item" onclick="showPage('services')">
+              <div class="mega-icon">📊</div>
+              <div><div class="mega-label">Financial Reporting</div><div class="mega-desc">Insights & dashboards</div></div>
+            </a>
+            <a class="mega-item" onclick="showPage('services')">
+              <div class="mega-icon">☁️</div>
+              <div><div class="mega-label">Virtual Accounting</div><div class="mega-desc">Remote CFO services</div></div>
+            </a>
+            <a class="mega-item" onclick="showPage('services')">
+              <div class="mega-icon">🔄</div>
+              <div><div class="mega-label">BPO Services</div><div class="mega-desc">Business process outsourcing</div></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="nav-link" onclick="showPage('industries')">Industries</button>
+      <button class="nav-link" onclick="showPage('insights')">Insights</button>
+      <button class="nav-link" onclick="showPage('careers')">Careers</button>
+      <button class="nav-link" onclick="showPage('contact')">Contact</button>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button class="btn btn-ghost" onclick="showPage('contact')">Login</button>
+      <button class="btn btn-primary" onclick="showPage('contact')">Book Consultation</button>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-nav-section">
+    <div class="mobile-nav-heading">Navigation</div>
+    <button class="mobile-nav-link" onclick="showPage('home');toggleMobile()">🏠 Home</button>
+    <button class="mobile-nav-link" onclick="showPage('about');toggleMobile()">ℹ️ About Us</button>
+    <button class="mobile-nav-link" onclick="showPage('services');toggleMobile()">⚙️ Services</button>
+    <button class="mobile-nav-link" onclick="showPage('industries');toggleMobile()">🏢 Industries</button>
+    <button class="mobile-nav-link" onclick="showPage('insights');toggleMobile()">📰 Insights</button>
+    <button class="mobile-nav-link" onclick="showPage('careers');toggleMobile()">💼 Careers</button>
+    <button class="mobile-nav-link" onclick="showPage('contact');toggleMobile()">📞 Contact</button>
+  </div>
+  <div style="padding:16px;">
+    <button class="btn btn-primary btn-lg" style="width:100%" onclick="showPage('contact');toggleMobile()">Book Free Consultation</button>
+  </div>
+</div>
+
+<!-- ============================== HOME PAGE ============================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Trusted by 200+ businesses across India
+        </div>
+        <h1>Financial Clarity.<br><span class="highlight">Business Growth.</span></h1>
+        <p class="hero-sub">Professional accounting, GST compliance, payroll, and financial solutions engineered for growing businesses. Your dedicated finance partner.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="showPage('contact')">Book Consultation →</button>
+          <button class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.3);color:white;" onclick="showPage('services')">Explore Services</button>
+        </div>
+        <div class="hero-trust">
+          <span class="hero-trust-text">Trusted by:</span>
+          <div class="hero-trust-logos">
+            <span class="trust-logo">STARTUPS</span>
+            <span class="trust-logo">SMEs</span>
+            <span class="trust-logo">ENTERPRISES</span>
+            <span class="trust-logo">E-COM</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="card-header">
+            <span class="card-title">Financial Dashboard</span>
+            <span class="card-badge">● Live</span>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat-value">₹4.8M</div>
+            <div class="card-stat-label">Total Revenue Managed · FY 2024-25</div>
+          </div>
+          <div class="card-bar-group">
+            <div class="card-bar-label"><span>GST Compliance</span><span>99%</span></div>
+            <div class="card-bar-track"><div class="card-bar-fill card-bar-1"></div></div>
+          </div>
+          <div class="card-bar-group">
+            <div class="card-bar-label"><span>Payroll Accuracy</span><span>100%</span></div>
+            <div class="card-bar-track"><div class="card-bar-fill card-bar-2"></div></div>
+          </div>
+          <div class="card-bar-group">
+            <div class="card-bar-label"><span>Cost Savings</span><span>78%</span></div>
+            <div class="card-bar-track"><div class="card-bar-fill card-bar-3"></div></div>
+          </div>
+          <div class="card-mini-stats">
+            <div><div class="mini-stat-val">500+</div><div class="mini-stat-lbl">Reports Delivered</div></div>
+            <div><div class="mini-stat-val">24hr</div><div class="mini-stat-lbl">Response Time</div></div>
+            <div><div class="mini-stat-val">99%</div><div class="mini-stat-lbl">Accuracy Rate</div></div>
+            <div><div class="mini-stat-val">3+</div><div class="mini-stat-lbl">Years Trusted</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+          <div class="stat-label">Reports Delivered</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-number"><span class="counter" data-target="99">0</span>%</div>
+          <div class="stat-label">Accuracy Rate</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-number"><span class="counter" data-target="24">0</span>hr</div>
+          <div class="stat-label">Response Time</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-number"><span class="counter" data-target="3">0</span>+</div>
+          <div class="stat-label">Years of Excellence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="eyebrow">What We Do</div>
+        <h2 class="section-title">End-to-End Financial Services</h2>
+        <p class="section-sub">From daily bookkeeping to strategic financial planning, we handle every aspect of your business finances so you can focus on growth.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">📚</div>
+          <div class="service-name">Bookkeeping</div>
+          <div class="service-desc">Accurate, real-time recording of all financial transactions to keep your books clean and audit-ready.</div>
+          <a class="service-link" onclick="showPage('services')">Learn more →</a>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">🧾</div>
+          <div class="service-name">GST Compliance</div>
+          <div class="service-desc">End-to-end GST registration, filing, reconciliation, and advisory to keep you penalty-free.</div>
+          <a class="service-link" onclick="showPage('services')">Learn more →</a>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">👥</div>
+          <div class="service-name">Payroll Management</div>
+          <div class="service-desc">On-time, error-free payroll processing including PF, ESI, and TDS compliance.</div>
+          <a class="service-link" onclick="showPage('services')">Learn more →</a>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">💳</div>
+          <div class="service-name">Accounts Payable</div>
+          <div class="service-desc">Streamlined vendor payment processing, approval workflows, and cash flow optimization.</div>
+          <a class="service-link" onclick="showPage('services')">Learn more →</a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">💰</div>
+          <div class="service-name">Accounts Receivable</div>
+          <div class="service-desc">Efficient invoice management, collections follow-up, and receivables tracking.</div>
+          <a class="service-link" onclick="showPage('services')">Learn more →</a>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">📊</div>
+          <div class="service-name">Financial Reporting</div>
+          <div class="service-desc">MIS reports, P&L statements, balance sheets, and custom dashboards for strategic decisions.</div>
+          <a class="service-link" onclick="showPage('services')">Learn more →</a>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">☁️</div>
+          <div class="service-name">Virtual Accounting</div>
+          <div class="service-desc">A dedicated virtual finance team that works as an extension of your business.</div>
+          <a class="service-link" onclick="showPage('services')">Learn more →</a>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">🔄</div>
+          <div class="service-name">BPO Services</div>
+          <div class="service-desc">Scalable finance and accounting process outsourcing for enterprises seeking efficiency.</div>
+          <a class="service-link" onclick="showPage('services')">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- INDUSTRIES -->
+  <section class="section" style="background:var(--surface)">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="eyebrow">Industries We Serve</div>
+        <h2 class="section-title">Built for Your Business</h2>
+        <p class="section-sub">We understand that every industry has unique financial needs. Our sector-specific expertise ensures solutions that fit your world.</p>
+      </div>
+      <div class="industries-grid">
+        <div class="industry-card reveal" onclick="showPage('industries')">
+          <span class="industry-icon">🏭</span>
+          <div class="industry-name">Manufacturing</div>
+          <div class="industry-desc">Cost accounting, inventory management, and production cycle financial control for manufacturers.</div>
+          <span class="industry-tag">Cost Analysis</span>
+        </div>
+        <div class="industry-card reveal reveal-delay-1" onclick="showPage('industries')">
+          <span class="industry-icon">🛍️</span>
+          <div class="industry-name">Retail</div>
+          <div class="industry-desc">Sales reconciliation, multi-store accounting, and GST compliance for retail chains.</div>
+          <span class="industry-tag">Multi-Store</span>
+        </div>
+        <div class="industry-card reveal reveal-delay-2" onclick="showPage('industries')">
+          <span class="industry-icon">🛒</span>
+          <div class="industry-name">E-Commerce</div>
+          <div class="industry-desc">Marketplace reconciliation, TDS on e-com, and platform-wise financial reporting.</div>
+          <span class="industry-tag">Marketplace</span>
+        </div>
+        <div class="industry-card reveal" onclick="showPage('industries')">
+          <span class="industry-icon">🏥</span>
+          <div class="industry-name">Healthcare</div>
+          <div class="industry-desc">Hospital billing reconciliation, pharmacy accounts, and healthcare regulatory compliance.</div>
+          <span class="industry-tag">Compliance</span>
+        </div>
+        <div class="industry-card reveal reveal-delay-1" onclick="showPage('industries')">
+          <span class="industry-icon">🚀</span>
+          <div class="industry-name">Startups</div>
+          <div class="industry-desc">Investor-ready financials, MIS reporting, cap table management, and runway optimization.</div>
+          <span class="industry-tag">Investor Ready</span>
+        </div>
+        <div class="industry-card reveal reveal-delay-2" onclick="showPage('industries')">
+          <span class="industry-icon">⚖️</span>
+          <div class="industry-name">Professional Services</div>
+          <div class="industry-desc">Project-based billing, retainer management, and profitability analysis for service firms.</div>
+          <span class="industry-tag">Project Billing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY FINCORE -->
+  <section class="section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-visual reveal">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;margin-bottom:24px;">Performance Overview</div>
+          <div class="why-visual-inner">
+            <div class="why-metric">
+              <div class="why-metric-val">₹50Cr+</div>
+              <div class="why-metric-lbl">Accounts Managed</div>
+            </div>
+            <div class="why-metric accent">
+              <div class="why-metric-val">200+</div>
+              <div class="why-metric-lbl">Happy Clients</div>
+            </div>
+            <div class="why-metric">
+              <div class="why-metric-val">Zero</div>
+              <div class="why-metric-lbl">Compliance Penalties</div>
+            </div>
+            <div class="why-metric">
+              <div class="why-metric-val">60%</div>
+              <div class="why-metric-lbl">Cost Reduction Avg.</div>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding:20px;background:linear-gradient(135deg,rgba(0,87,255,0.06),rgba(59,130,246,0.04));border-radius:14px;border:1px solid var(--border-blue)">
+            <div style="font-size:13px;font-weight:600;color:var(--blue);margin-bottom:6px">★ Certified & Compliant</div>
+            <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Our team holds CA, CPA, and CMA certifications. Your finances are in expert hands.</div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div class="eyebrow">Why Choose FinCore</div>
+          <h2 class="section-title">Finance Expertise That Moves With You</h2>
+          <p style="font-size:16px;color:var(--text-muted);line-height:1.7;margin-bottom:36px">We're not just accountants — we're your financial co-pilots. Our proactive approach identifies opportunities and risks before they impact your bottom line.</p>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-check">✓</div>
+              <div>
+                <div class="why-item-title">CA-Qualified Professional Team</div>
+                <div class="why-item-desc">Every engagement is handled by qualified chartered accountants with deep domain expertise across industries.</div>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-check">✓</div>
+              <div>
+                <div class="why-item-title">Technology-First Approach</div>
+                <div class="why-item-desc">We work with Tally, QuickBooks, Zoho Books, and leading cloud platforms for real-time financial visibility.</div>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-check">✓</div>
+              <div>
+                <div class="why-item-title">Zero Compliance Failures</div>
+                <div class="why-item-desc">Our proactive compliance calendar ensures you never miss a GST filing, TDS date, or regulatory deadline.</div>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-check">✓</div>
+              <div>
+                <div class="why-item-title">Dedicated Account Manager</div>
+                <div class="why-item-desc">A single point of contact who knows your business deeply — always available, always informed.</div>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-check">✓</div>
+              <div>
+                <div class="why-item-title">Transparent, Scalable Pricing</div>
+                <div class="why-item-desc">No hidden fees. Our service packages scale with your business — pay only for what you need.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section-sm" style="background:var(--surface)">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:48px">
+        <div class="eyebrow">How We Work</div>
+        <h2 class="section-title">Onboarding in 4 Simple Steps</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-item reveal">
+          <div class="process-num">1</div>
+          <div class="process-title">Free Consultation</div>
+          <div class="process-desc">Book a call with our expert team. We understand your business, challenges, and financial goals.</div>
+        </div>
+        <div class="process-item reveal reveal-delay-1">
+          <div class="process-num">2</div>
+          <div class="process-title">Custom Proposal</div>
+          <div class="process-desc">We design a tailored service package aligned to your industry, scale, and compliance needs.</div>
+        </div>
+        <div class="process-item reveal reveal-delay-2">
+          <div class="process-num">3</div>
+          <div class="process-title">Seamless Transition</div>
+          <div class="process-desc">Our onboarding team migrates your accounts and sets up automated workflows within 48 hours.</div>
+        </div>
+        <div class="process-item reveal reveal-delay-3">
+          <div class="process-num">4</div>
+          <div class="process-title">Ongoing Partnership</div>
+          <div class="process-desc">Monthly reviews, real-time reports, and proactive advice — we grow alongside your business.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testi-section">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:48px">
+        <div class="eyebrow">Client Stories</div>
+        <h2 class="section-title">Trusted by Growing Businesses</h2>
+        <p class="section-sub">Don't take our word for it. Here's what our clients say about working with FinCore.</p>
+      </div>
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"FinCore transformed our financial operations entirely. We went from chaotic spreadsheets to clean, real-time reports. Our GST filings have been zero-error for 2 consecutive years."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Rahul Mehta</div>
+              <div class="testi-role">CEO, Mehta Textiles Ltd · Manufacturing</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"As a fast-growing e-commerce brand, reconciling marketplace payments was a nightmare. FinCore's team automated everything. Now I have daily visibility into my numbers."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">P</div>
+            <div>
+              <div class="testi-name">Priya Sharma</div>
+              <div class="testi-role">Founder, StyleNest · E-Commerce</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"The virtual CFO service from FinCore has been game-changing for our Series A fundraise. Our investor-ready financials were prepared flawlessly and on time."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Arjun Kapoor</div>
+              <div class="testi-role">Co-Founder, NovaTech Labs · Startup</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Managing payroll for 150 employees was stressful. FinCore handles everything — PF, ESI, TDS — without a single error. Our team gets paid on time, every time."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Suresh Kumar</div>
+              <div class="testi-role">HR Director, Apollo Health Clinics · Healthcare</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-controls">
+        <button class="testi-btn" onclick="scrollTesti(-1)">←</button>
+        <button class="testi-btn" onclick="scrollTesti(1)">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="text-center reveal" style="margin-bottom:48px">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="section-title">Common Questions</h2>
+      </div>
+      <div id="faq">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What types of businesses does FinCore serve?<div class="faq-icon">+</div></div>
+          <div class="faq-answer">We serve startups, SMEs, manufacturers, retailers, e-commerce businesses, healthcare providers, and professional service firms across India. Our team has sector-specific expertise to handle the unique financial needs of each industry.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">How quickly can you onboard my business?<div class="faq-icon">+</div></div>
+          <div class="faq-answer">Our streamlined onboarding process takes 24-48 hours. After your initial consultation, we'll have your accounts migrated, workflows set up, and your dedicated account manager introduced — all within two business days.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Do you work with cloud accounting software?<div class="faq-icon">+</div></div>
+          <div class="faq-answer">Yes. We're proficient in Tally, QuickBooks, Zoho Books, FreshBooks, Sage, and all major accounting platforms. We can work with your existing software or recommend the best fit for your business.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What's included in your Virtual CFO service?<div class="faq-icon">+</div></div>
+          <div class="faq-answer">Our Virtual CFO service includes MIS reporting, cash flow forecasting, budgeting, board/investor presentations, fundraising support, financial strategy advisory, and a dedicated senior finance professional available on-demand.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">How do you ensure data security and confidentiality?<div class="faq-icon">+</div></div>
+          <div class="faq-answer">We follow bank-grade security protocols. All client data is encrypted, stored on secure servers with limited access, and covered by strict NDAs. Our team undergoes regular security training, and we comply with all data protection regulations.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What is your pricing structure?<div class="faq-icon">+</div></div>
+          <div class="faq-answer">We offer flexible, transparent pricing based on your business size, transaction volume, and service requirements. We have monthly retainer packages starting from ₹4,999/month for startups, with custom pricing for larger enterprises. No hidden fees.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <div class="cta-title">Ready to Achieve Financial Clarity?</div>
+          <div class="cta-sub">Join 200+ businesses that trust FinCore for their financial success.</div>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-white btn-lg" onclick="showPage('contact')">Book Free Consultation</button>
+          <button class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.3);color:white;" onclick="showPage('contact')">Talk to an Expert</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">FC</div>
+            <div class="footer-logo-text">Fin<span>Core</span></div>
+          </div>
+          <div class="footer-desc">FinCore Accounting is a modern financial services firm helping businesses achieve clarity, compliance, and sustainable growth. Your trusted finance partner.</div>
+          <div class="footer-social">
+            <a class="social-btn" title="LinkedIn">in</a>
+            <a class="social-btn" title="Twitter">𝕏</a>
+            <a class="social-btn" title="Facebook">f</a>
+            <a class="social-btn" title="WhatsApp">✉</a>
+          </div>
+          <div style="margin-top:24px">
+            <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-bottom:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase">Newsletter</div>
+            <div class="newsletter-form">
+              <input class="newsletter-input" type="email" placeholder="Your email address">
+              <button class="newsletter-btn">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Services</div>
+          <div class="footer-links">
+            <a class="footer-link" onclick="showPage('services')">Bookkeeping</a>
+            <a class="footer-link" onclick="showPage('services')">GST Compliance</a>
+            <a class="footer-link" onclick="showPage('services')">Payroll Management</a>
+            <a class="footer-link" onclick="showPage('services')">Accounts Payable</a>
+            <a class="footer-link" onclick="showPage('services')">Accounts Receivable</a>
+            <a class="footer-link" onclick="showPage('services')">Financial Reporting</a>
+            <a class="footer-link" onclick="showPage('services')">Virtual Accounting</a>
+            <a class="footer-link" onclick="showPage('services')">BPO Services</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Industries</div>
+          <div class="footer-links">
+            <a class="footer-link" onclick="showPage('industries')">Manufacturing</a>
+            <a class="footer-link" onclick="showPage('industries')">Retail</a>
+            <a class="footer-link" onclick="showPage('industries')">E-Commerce</a>
+            <a class="footer-link" onclick="showPage('industries')">Healthcare</a>
+            <a class="footer-link" onclick="showPage('industries')">Startups</a>
+            <a class="footer-link" onclick="showPage('industries')">Professional Services</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Company</div>
+          <div class="footer-links">
+            <a class="footer-link" onclick="showPage('about')">About Us</a>
+            <a class="footer-link" onclick="showPage('insights')">Insights</a>
+            <a class="footer-link" onclick="showPage('careers')">Careers</a>
+            <a class="footer-link" onclick="showPage('contact')">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <div class="footer-links">
+            <a class="footer-link">📍 Mumbai, India</a>
+            <a class="footer-link">📞 +91 98765 43210</a>
+            <a class="footer-link">✉ hello@fincore.in</a>
+            <a class="footer-link">💬 WhatsApp Chat</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 FinCore Accounting. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============================== ABOUT PAGE ============================== -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);justify-content:center">Our Story</div>
+    <h1 class="page-hero-title">Built on Trust.<br>Driven by Expertise.</h1>
+    <p class="page-hero-sub">FinCore was founded with a simple belief: every business deserves a finance partner that cares as much about their growth as they do.</p>
+  </div>
+
+  <!-- MISSION VISION -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px" class="reveal">
+        <div style="background:var(--navy);border-radius:var(--radius-xl);padding:40px;color:white">
+          <div style="font-size:32px;margin-bottom:20px">🎯</div>
+          <div style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px">Our Mission</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;line-height:1.3;margin-bottom:16px">Empowering Financial Clarity</div>
+          <div style="color:rgba(255,255,255,0.6);font-size:14px;line-height:1.7">To provide every business — regardless of size — with the financial clarity, compliance confidence, and strategic insights they need to grow without limits.</div>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--blue),#0040CC);border-radius:var(--radius-xl);padding:40px;color:white">
+          <div style="font-size:32px;margin-bottom:20px">🔭</div>
+          <div style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px">Our Vision</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;line-height:1.3;margin-bottom:16px">India's Most Trusted Finance Partner</div>
+          <div style="color:rgba(255,255,255,0.75);font-size:14px;line-height:1.7">To be the financial backbone of 10,000+ growing businesses by 2030, delivering unmatched accuracy, trust, and value at every stage of their journey.</div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:40px;">
+          <div style="font-size:32px;margin-bottom:20px">💡</div>
+          <div style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px">Our Approach</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;line-height:1.3;color:var(--text);margin-bottom:16px">Proactive, Not Reactive</div>
+          <div style="color:var(--text-muted);font-size:14px;line-height:1.7">We don't just record numbers — we interpret them. Our team proactively identifies financial risks, opportunities, and compliance gaps before they become problems.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section" style="background:var(--surface);padding-top:0">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:48px">
+        <div class="eyebrow">What We Stand For</div>
+        <h2 class="section-title">Our Core Values</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <span class="value-icon">🛡️</span>
+          <div class="value-title">Integrity First</div>
+          <div class="value-desc">We uphold the highest ethical standards in every engagement. Your trust is our most valuable asset — we never compromise it.</div>
+        </div>
+        <div class="value-card reveal reveal-delay-1">
+          <span class="value-icon">🎯</span>
+          <div class="value-title">Precision Excellence</div>
+          <div class="value-desc">Every figure we produce goes through rigorous checks. 99% accuracy isn't our floor — it's our baseline. We aim for 100%.</div>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <span class="value-icon">🤝</span>
+          <div class="value-title">Client Partnership</div>
+          <div class="value-desc">We see ourselves as an extension of your team. Your financial success is our success — we're with you at every milestone.</div>
+        </div>
+        <div class="value-card reveal">
+          <span class="value-icon">⚡</span>
+          <div class="value-title">Agile Responsiveness</div>
+          <div class="value-desc">Business moves fast. We match your pace — responding to queries within hours, not days, and adapting to regulatory changes proactively.</div>
+        </div>
+        <div class="value-card reveal reveal-delay-1">
+          <span class="value-icon">🔒</span>
+          <div class="value-title">Absolute Confidentiality</div>
+          <div class="value-desc">Your financial data is protected by enterprise-grade security and strict NDAs. We take data privacy as seriously as financial accuracy.</div>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <span class="value-icon">📈</span>
+          <div class="value-title">Growth Mindset</div>
+          <div class="value-desc">We continuously invest in technology, certifications, and knowledge so our team stays at the forefront of accounting excellence.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:48px">
+        <div class="eyebrow">Leadership</div>
+        <h2 class="section-title">A Message from the Founder</h2>
+      </div>
+      <div class="founder-card reveal">
+        <div>
+          <div class="founder-photo">🧑‍💼</div>
+        </div>
+        <div>
+          <div class="founder-name">Vikram Joshi, CA</div>
+          <div class="founder-role">Founder & Managing Director, FinCore Accounting</div>
+          <div class="founder-quote">"I founded FinCore because I saw too many brilliant businesses struggling with financial chaos — not because they lacked ambition, but because they lacked the right financial partner. We built FinCore to change that."</div>
+          <div class="founder-bio">With over 12 years of experience across Big 4 accounting firms and corporate finance, Vikram built FinCore on the belief that expert financial management shouldn't be reserved for large corporations. Today, FinCore serves 200+ businesses, bringing institutional-quality financial expertise to growing companies across India.<br><br>Vikram holds a CA certification from ICAI and an MBA from IIM Ahmedabad. He is a regular speaker at startup and SME finance forums across India.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="section-sm" style="background:var(--surface)">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:40px">
+        <div class="eyebrow">Why Clients Trust Us</div>
+        <h2 class="section-title">The FinCore Difference</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-badge reveal">🏅<br>CA Certified<br>Team</div>
+        <div class="trust-badge reveal reveal-delay-1">🔒<br>Bank-Grade<br>Security</div>
+        <div class="trust-badge reveal reveal-delay-2">📋<br>Zero Compliance<br>Failures</div>
+        <div class="trust-badge reveal">⚡<br>24hr<br>Response</div>
+        <div class="trust-badge reveal reveal-delay-1">💯<br>99%<br>Accuracy</div>
+        <div class="trust-badge reveal reveal-delay-2">🌐<br>Cloud-First<br>Platform</div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="padding-top:0;border:none">
+        <div class="footer-copy">© 2025 FinCore Accounting. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#" style="cursor:pointer" onclick="showPage('home')">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============================== SERVICES PAGE ============================== -->
+<div id="page-services" class="page">
+  <div class="about-hero">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);justify-content:center">What We Offer</div>
+    <h1 class="page-hero-title">Comprehensive Financial Services</h1>
+    <p class="page-hero-sub">From daily bookkeeping to strategic CFO advisory — every service your business needs, under one roof.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="service-detail-card reveal">
+        <div class="service-detail-header">
+          <div class="service-detail-icon">📚</div>
+          <div>
+            <div class="service-detail-title">Bookkeeping</div>
+            <div class="service-detail-desc">Accurate, organized, and up-to-date financial records are the foundation of every successful business. Our bookkeeping service ensures your accounts are clean, current, and compliant — always.</div>
+          </div>
+        </div>
+        <div class="service-detail-body">
+          <div class="service-detail-section">
+            <h4>Key Benefits</h4>
+            <div class="benefit-list">
+              <div class="benefit-item">Real-time financial records</div>
+              <div class="benefit-item">Audit-ready books always</div>
+              <div class="benefit-item">Reduced accounting errors</div>
+              <div class="benefit-item">Bank & credit card reconciliation</div>
+              <div class="benefit-item">Monthly MIS reports</div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Our Process</h4>
+            <div class="process-steps">
+              <div class="process-step"><div class="step-num">1</div><div class="step-text">Data collection & cloud integration</div></div>
+              <div class="process-step"><div class="step-num">2</div><div class="step-text">Transaction categorization & coding</div></div>
+              <div class="process-step"><div class="step-num">3</div><div class="step-text">Bank reconciliation & review</div></div>
+              <div class="process-step"><div class="step-num">4</div><div class="step-text">Monthly reporting & insights</div></div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Get Started</h4>
+            <p style="font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:20px">Trusted by 200+ businesses. Start your free 30-day trial with zero commitment.</p>
+            <button class="btn btn-primary" onclick="showPage('contact')">Book Consultation →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail-card reveal">
+        <div class="service-detail-header">
+          <div class="service-detail-icon">🧾</div>
+          <div>
+            <div class="service-detail-title">GST Compliance</div>
+            <div class="service-detail-desc">Navigate India's complex GST landscape with confidence. We handle everything from registration to monthly filing, annual returns, and GST audit support.</div>
+          </div>
+        </div>
+        <div class="service-detail-body">
+          <div class="service-detail-section">
+            <h4>Key Benefits</h4>
+            <div class="benefit-list">
+              <div class="benefit-item">Zero late filing penalties</div>
+              <div class="benefit-item">GSTR-1, 3B, 9, 9C filings</div>
+              <div class="benefit-item">ITC reconciliation</div>
+              <div class="benefit-item">GST audit support</div>
+              <div class="benefit-item">E-way bill management</div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Our Process</h4>
+            <div class="process-steps">
+              <div class="process-step"><div class="step-num">1</div><div class="step-text">Transaction data review & classification</div></div>
+              <div class="process-step"><div class="step-num">2</div><div class="step-text">ITC matching & reconciliation</div></div>
+              <div class="process-step"><div class="step-num">3</div><div class="step-text">Return preparation & review</div></div>
+              <div class="process-step"><div class="step-num">4</div><div class="step-text">Filing & confirmation delivery</div></div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Get Started</h4>
+            <p style="font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:20px">Never miss a GST deadline again. Let our experts handle it all.</p>
+            <button class="btn btn-primary" onclick="showPage('contact')">Book Consultation →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail-card reveal">
+        <div class="service-detail-header">
+          <div class="service-detail-icon">👥</div>
+          <div>
+            <div class="service-detail-title">Payroll Management</div>
+            <div class="service-detail-desc">From salary disbursement to statutory compliance, we manage every element of your payroll with precision — ensuring your employees are paid correctly and on time.</div>
+          </div>
+        </div>
+        <div class="service-detail-body">
+          <div class="service-detail-section">
+            <h4>Key Benefits</h4>
+            <div class="benefit-list">
+              <div class="benefit-item">On-time salary processing</div>
+              <div class="benefit-item">PF, ESI, TDS compliance</div>
+              <div class="benefit-item">Payslip generation & portal</div>
+              <div class="benefit-item">Form 16 preparation</div>
+              <div class="benefit-item">Leave & attendance management</div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Our Process</h4>
+            <div class="process-steps">
+              <div class="process-step"><div class="step-num">1</div><div class="step-text">Employee data & structure setup</div></div>
+              <div class="process-step"><div class="step-num">2</div><div class="step-text">Monthly payroll computation</div></div>
+              <div class="process-step"><div class="step-num">3</div><div class="step-text">Statutory deductions & filings</div></div>
+              <div class="process-step"><div class="step-num">4</div><div class="step-text">Payslip distribution & reports</div></div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Get Started</h4>
+            <p style="font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:20px">Manage 5 or 500 employees with equal precision. Scalable payroll solutions.</p>
+            <button class="btn btn-primary" onclick="showPage('contact')">Book Consultation →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail-card reveal">
+        <div class="service-detail-header">
+          <div class="service-detail-icon">📊</div>
+          <div>
+            <div class="service-detail-title">Financial Reporting & MIS</div>
+            <div class="service-detail-desc">Transform raw financial data into powerful insights. Our reporting service delivers clear, actionable management reports that drive smarter business decisions.</div>
+          </div>
+        </div>
+        <div class="service-detail-body">
+          <div class="service-detail-section">
+            <h4>Key Benefits</h4>
+            <div class="benefit-list">
+              <div class="benefit-item">P&L, Balance Sheet, Cash Flow</div>
+              <div class="benefit-item">Custom MIS dashboards</div>
+              <div class="benefit-item">Budget vs. Actuals analysis</div>
+              <div class="benefit-item">Investor-ready reports</div>
+              <div class="benefit-item">KPI tracking & alerts</div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Our Process</h4>
+            <div class="process-steps">
+              <div class="process-step"><div class="step-num">1</div><div class="step-text">Define KPIs & reporting structure</div></div>
+              <div class="process-step"><div class="step-num">2</div><div class="step-text">Data aggregation & validation</div></div>
+              <div class="process-step"><div class="step-num">3</div><div class="step-text">Report preparation & analysis</div></div>
+              <div class="process-step"><div class="step-num">4</div><div class="step-text">Monthly review & strategy session</div></div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Get Started</h4>
+            <p style="font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:20px">Stop guessing. Start making data-driven financial decisions today.</p>
+            <button class="btn btn-primary" onclick="showPage('contact')">Book Consultation →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail-card reveal">
+        <div class="service-detail-header">
+          <div class="service-detail-icon">☁️</div>
+          <div>
+            <div class="service-detail-title">Virtual Accounting & CFO Services</div>
+            <div class="service-detail-desc">Get the expertise of a full finance team without the overhead. Our Virtual Accounting service gives you a dedicated CA, bookkeeper, and CFO-level advisor — all remote, all on-demand.</div>
+          </div>
+        </div>
+        <div class="service-detail-body">
+          <div class="service-detail-section">
+            <h4>Key Benefits</h4>
+            <div class="benefit-list">
+              <div class="benefit-item">Dedicated virtual finance team</div>
+              <div class="benefit-item">CFO-level strategic advisory</div>
+              <div class="benefit-item">Fundraising & pitch support</div>
+              <div class="benefit-item">Cash flow management</div>
+              <div class="benefit-item">Cost-effective vs in-house</div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Our Process</h4>
+            <div class="process-steps">
+              <div class="process-step"><div class="step-num">1</div><div class="step-text">Business goals & needs assessment</div></div>
+              <div class="process-step"><div class="step-num">2</div><div class="step-text">Team assignment & onboarding</div></div>
+              <div class="process-step"><div class="step-num">3</div><div class="step-text">Monthly operations & reporting</div></div>
+              <div class="process-step"><div class="step-num">4</div><div class="step-text">Quarterly CFO strategy reviews</div></div>
+            </div>
+          </div>
+          <div class="service-detail-section">
+            <h4>Get Started</h4>
+            <p style="font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:20px">Your full finance department for a fraction of in-house costs.</p>
+            <button class="btn btn-primary" onclick="showPage('contact')">Book Consultation →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-sm" style="background:var(--surface)">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div><div class="cta-title">Not Sure Which Service You Need?</div><div class="cta-sub">Our experts will assess your needs and recommend the right solution.</div></div>
+        <div class="cta-actions"><button class="btn btn-white btn-lg" onclick="showPage('contact')">Get Free Assessment</button></div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding-top:0;border:none"><div class="footer-copy">© 2025 FinCore Accounting.</div><a style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;cursor:pointer" onclick="showPage('home')">← Back to Home</a></div></div></footer>
+</div>
+
+<!-- ============================== INDUSTRIES PAGE ============================== -->
+<div id="page-industries" class="page">
+  <div class="about-hero">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);justify-content:center">Sector Expertise</div>
+    <h1 class="page-hero-title">Financial Solutions for<br>Every Industry</h1>
+    <p class="page-hero-sub">Deep sector knowledge means we understand your compliance challenges, reporting needs, and growth drivers — not just your numbers.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="industry-detail reveal">
+        <div>
+          <div class="industry-visual">🏭</div>
+        </div>
+        <div>
+          <div class="eyebrow">Manufacturing</div>
+          <div class="industry-detail-title">Built for the Production Floor</div>
+          <div class="industry-detail-desc">Manufacturing businesses face unique challenges — complex inventory management, multi-stage production costing, and heavy GST compliance. Our manufacturing-specific accounting solutions give you complete cost visibility and compliance confidence.</div>
+          <div class="industry-detail-services">
+            <span class="tag">Cost Accounting</span>
+            <span class="tag">Inventory Valuation</span>
+            <span class="tag">GST on Manufacturing</span>
+            <span class="tag">Job Costing</span>
+            <span class="tag">Vendor Reconciliation</span>
+          </div>
+          <br><button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:12px">Get Manufacturing Quote →</button>
+        </div>
+      </div>
+
+      <div class="industry-detail reverse reveal">
+        <div>
+          <div class="industry-visual">🛍️</div>
+        </div>
+        <div>
+          <div class="eyebrow">Retail</div>
+          <div class="industry-detail-title">Scale Your Retail Operations</div>
+          <div class="industry-detail-desc">From single stores to multi-city retail chains, our retail accounting solutions handle high-volume transactions, multi-location reconciliation, and GST across different product categories with precision.</div>
+          <div class="industry-detail-services">
+            <span class="tag">Multi-Store Accounting</span>
+            <span class="tag">Inventory Management</span>
+            <span class="tag">GST on Retail</span>
+            <span class="tag">POS Reconciliation</span>
+            <span class="tag">Vendor Payments</span>
+          </div>
+          <br><button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:12px">Get Retail Quote →</button>
+        </div>
+      </div>
+
+      <div class="industry-detail reveal">
+        <div>
+          <div class="industry-visual">🛒</div>
+        </div>
+        <div>
+          <div class="eyebrow">E-Commerce</div>
+          <div class="industry-detail-title">Accounting Built for Digital Commerce</div>
+          <div class="industry-detail-desc">E-commerce businesses deal with marketplace TDS, return reconciliation, platform-specific fees, and multi-state GST compliance. We've built specialized workflows for Flipkart, Amazon, Meesho, and all major platforms.</div>
+          <div class="industry-detail-services">
+            <span class="tag">Marketplace Reconciliation</span>
+            <span class="tag">TDS on E-Com</span>
+            <span class="tag">Returns Management</span>
+            <span class="tag">Platform-wise Reports</span>
+            <span class="tag">D2C Accounting</span>
+          </div>
+          <br><button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:12px">Get E-Com Quote →</button>
+        </div>
+      </div>
+
+      <div class="industry-detail reverse reveal">
+        <div>
+          <div class="industry-visual">🏥</div>
+        </div>
+        <div>
+          <div class="eyebrow">Healthcare</div>
+          <div class="industry-detail-title">Compliance-Ready Healthcare Finance</div>
+          <div class="industry-detail-desc">Hospitals, clinics, and pharmaceutical businesses operate under strict regulatory frameworks. Our healthcare accounting team ensures complete compliance with GST on medical services, pharmacy accounts, and insurance billing reconciliation.</div>
+          <div class="industry-detail-services">
+            <span class="tag">Hospital Billing</span>
+            <span class="tag">Pharmacy Accounts</span>
+            <span class="tag">Insurance Reconciliation</span>
+            <span class="tag">GST on Healthcare</span>
+            <span class="tag">Payroll for Medical Staff</span>
+          </div>
+          <br><button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:12px">Get Healthcare Quote →</button>
+        </div>
+      </div>
+
+      <div class="industry-detail reveal">
+        <div>
+          <div class="industry-visual">🚀</div>
+        </div>
+        <div>
+          <div class="eyebrow">Startups</div>
+          <div class="industry-detail-title">Investor-Ready from Day One</div>
+          <div class="industry-detail-desc">Startups need lean, scalable financial infrastructure that can support rapid growth and investor scrutiny. We help founders build clean books, financial models, and reporting systems that impress investors and enable smart decisions.</div>
+          <div class="industry-detail-services">
+            <span class="tag">Investor-Ready Financials</span>
+            <span class="tag">Runway Forecasting</span>
+            <span class="tag">Cap Table Support</span>
+            <span class="tag">MIS Reporting</span>
+            <span class="tag">Startup GST</span>
+          </div>
+          <br><button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:12px">Get Startup Quote →</button>
+        </div>
+      </div>
+
+      <div class="industry-detail reverse reveal">
+        <div>
+          <div class="industry-visual">⚖️</div>
+        </div>
+        <div>
+          <div class="eyebrow">Professional Services</div>
+          <div class="industry-detail-title">Finance for Knowledge Businesses</div>
+          <div class="industry-detail-desc">Law firms, consulting companies, agencies, and tech firms have project-based revenue, retainer billing, and complex multi-client financial management. We specialize in professional services accounting that scales with your client base.</div>
+          <div class="industry-detail-services">
+            <span class="tag">Project Billing</span>
+            <span class="tag">Retainer Management</span>
+            <span class="tag">Profitability Analysis</span>
+            <span class="tag">Client-wise P&L</span>
+            <span class="tag">GST on Services</span>
+          </div>
+          <br><button class="btn btn-primary" onclick="showPage('contact')" style="margin-top:12px">Get Services Quote →</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding-top:0;border:none"><div class="footer-copy">© 2025 FinCore Accounting.</div><a style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;cursor:pointer" onclick="showPage('home')">← Back to Home</a></div></div></footer>
+</div>
+
+<!-- ============================== INSIGHTS PAGE ============================== -->
+<div id="page-insights" class="page">
+  <div class="about-hero">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);justify-content:center">FinCore Insights</div>
+    <h1 class="page-hero-title">Financial Knowledge<br>For Business Leaders</h1>
+    <p class="page-hero-sub">Expert articles, GST updates, payroll guides, and financial strategies — written by our CA team for business owners.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="cat-pills">
+        <div class="cat-pill active">All Articles</div>
+        <div class="cat-pill">Accounting</div>
+        <div class="cat-pill">GST</div>
+        <div class="cat-pill">Payroll</div>
+        <div class="cat-pill">Business Finance</div>
+        <div class="cat-pill">Compliance</div>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card reveal">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#EEF2FF,#DBEAFE)">
+            📊<div class="blog-cat">Accounting</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">June 12, 2025 · 6 min read</div>
+            <div class="blog-title">5 Bookkeeping Mistakes That Are Costing Your Business Money</div>
+            <div class="blog-excerpt">Most business owners don't realize that poor bookkeeping is silently draining their profits. Here are the most common errors and how to fix them.</div>
+            <div class="blog-read">Read Article →</div>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-1">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#ECFDF5,#D1FAE5)">
+            🧾<div class="blog-cat" style="background:#059669">GST</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">May 28, 2025 · 8 min read</div>
+            <div class="blog-title">GST Reconciliation 2025: A Complete Guide for Business Owners</div>
+            <div class="blog-excerpt">Understanding GSTR-2B reconciliation and ITC claims can save your business lakhs. Here's our step-by-step guide to getting it right.</div>
+            <div class="blog-read">Read Article →</div>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-2">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#FFF7ED,#FED7AA)">
+            👥<div class="blog-cat" style="background:#EA580C">Payroll</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">May 15, 2025 · 5 min read</div>
+            <div class="blog-title">PF & ESI Compliance in 2025: What Has Changed and What You Must Do</div>
+            <div class="blog-excerpt">Recent amendments to PF and ESI regulations affect all businesses with 20+ employees. Here's what changed and how to stay compliant.</div>
+            <div class="blog-read">Read Article →</div>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#FDF4FF,#F5D0FE)">
+            🚀<div class="blog-cat" style="background:#9333EA">Business Finance</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">May 3, 2025 · 10 min read</div>
+            <div class="blog-title">How Startups Should Structure Their Finances Before Series A</div>
+            <div class="blog-excerpt">Investors examine your financial health meticulously. Here's the financial housekeeping every startup should complete before their funding round.</div>
+            <div class="blog-read">Read Article →</div>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-1">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">
+            🔒<div class="blog-cat">Compliance</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">April 20, 2025 · 7 min read</div>
+            <div class="blog-title">TDS Compliance Calendar 2025-26: All Deadlines You Must Know</div>
+            <div class="blog-excerpt">Missing TDS deadlines results in penalties and interest. Use our comprehensive TDS compliance calendar to stay ahead of every due date.</div>
+            <div class="blog-read">Read Article →</div>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-2">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0)">
+            💰<div class="blog-cat" style="background:#16A34A">Business Finance</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">April 8, 2025 · 9 min read</div>
+            <div class="blog-title">Cash Flow Management for SMEs: Strategies That Actually Work</div>
+            <div class="blog-excerpt">Cash flow crises kill more businesses than low profits. Here are proven strategies SME owners use to maintain healthy cash positions year-round.</div>
+            <div class="blog-read">Read Article →</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px">
+        <button class="btn btn-outline btn-lg">Load More Articles</button>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding-top:0;border:none"><div class="footer-copy">© 2025 FinCore Accounting.</div><a style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;cursor:pointer" onclick="showPage('home')">← Back to Home</a></div></div></footer>
+</div>
+
+<!-- ============================== CAREERS PAGE ============================== -->
+<div id="page-careers" class="page">
+  <div class="about-hero">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);justify-content:center">Join Our Team</div>
+    <h1 class="page-hero-title">Build the Future of<br>Business Finance</h1>
+    <p class="page-hero-sub">We're looking for exceptional finance professionals who want to make a real impact on growing businesses across India.</p>
+  </div>
+
+  <!-- CULTURE -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:48px">
+        <div class="eyebrow">Our Culture</div>
+        <h2 class="section-title">Why People Love Working at FinCore</h2>
+      </div>
+      <div class="culture-grid">
+        <div class="culture-card reveal">
+          <span class="culture-icon">🌱</span>
+          <div class="culture-title">Continuous Learning</div>
+          <div class="culture-desc">Annual learning budget of ₹50,000, access to premium courses, CPA/CFA support, and regular masterclasses from industry leaders.</div>
+        </div>
+        <div class="culture-card reveal reveal-delay-1">
+          <span class="culture-icon">⚖️</span>
+          <div class="culture-title">Work-Life Balance</div>
+          <div class="culture-desc">Flexible work hours, remote-first culture, 24 paid leave days, and a team that genuinely respects your personal time.</div>
+        </div>
+        <div class="culture-card reveal reveal-delay-2">
+          <span class="culture-icon">🤝</span>
+          <div class="culture-title">Collaborative Team</div>
+          <div class="culture-desc">A flat hierarchy where every voice matters. We solve problems together, celebrate wins together, and learn from failures together.</div>
+        </div>
+        <div class="culture-card reveal">
+          <span class="culture-icon">💰</span>
+          <div class="culture-title">Competitive Compensation</div>
+          <div class="culture-desc">Above-market salaries, performance bonuses, health insurance, and equity opportunities for senior roles.</div>
+        </div>
+        <div class="culture-card reveal reveal-delay-1">
+          <span class="culture-icon">🚀</span>
+          <div class="culture-title">Fast Career Growth</div>
+          <div class="culture-desc">Clear promotion paths, quarterly performance reviews, and opportunities to lead teams and client engagements within months, not years.</div>
+        </div>
+        <div class="culture-card reveal reveal-delay-2">
+          <span class="culture-icon">🌏</span>
+          <div class="culture-title">Remote-First</div>
+          <div class="culture-desc">Work from anywhere in India. Our digital-first infrastructure means you have everything you need to excel, wherever you are.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN POSITIONS -->
+  <section class="section" style="background:var(--surface);padding-top:0">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:48px">
+        <div class="eyebrow">Open Positions</div>
+        <h2 class="section-title">Current Opportunities</h2>
+      </div>
+      <div class="job-card reveal">
+        <div>
+          <div class="job-title">Senior Chartered Accountant</div>
+          <div class="job-meta">
+            <span class="job-tag">📍 Mumbai / Remote</span>
+            <span class="job-tag">⏰ Full-Time</span>
+            <span class="job-tag">💰 ₹12–18 LPA</span>
+          </div>
+        </div>
+        <span class="job-badge">Hiring Now</span>
+      </div>
+      <div class="job-card reveal">
+        <div>
+          <div class="job-title">GST & Tax Compliance Specialist</div>
+          <div class="job-meta">
+            <span class="job-tag">📍 Remote</span>
+            <span class="job-tag">⏰ Full-Time</span>
+            <span class="job-tag">💰 ₹6–10 LPA</span>
+          </div>
+        </div>
+        <span class="job-badge">Hiring Now</span>
+      </div>
+      <div class="job-card reveal">
+        <div>
+          <div class="job-title">Payroll Processing Manager</div>
+          <div class="job-meta">
+            <span class="job-tag">📍 Mumbai</span>
+            <span class="job-tag">⏰ Full-Time</span>
+            <span class="job-tag">💰 ₹8–12 LPA</span>
+          </div>
+        </div>
+        <span class="job-badge">Hiring Now</span>
+      </div>
+      <div class="job-card reveal">
+        <div>
+          <div class="job-title">Junior Bookkeeper (Fresher Welcome)</div>
+          <div class="job-meta">
+            <span class="job-tag">📍 Remote</span>
+            <span class="job-tag">⏰ Full-Time</span>
+            <span class="job-tag">💰 ₹3–4.5 LPA</span>
+          </div>
+        </div>
+        <span class="job-badge">Hiring Now</span>
+      </div>
+      <div class="job-card reveal">
+        <div>
+          <div class="job-title">Business Development Manager – Finance Services</div>
+          <div class="job-meta">
+            <span class="job-tag">📍 Mumbai / Hybrid</span>
+            <span class="job-tag">⏰ Full-Time</span>
+            <span class="job-tag">💰 ₹10–16 LPA + incentives</span>
+          </div>
+        </div>
+        <span class="job-badge">Hiring Now</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION FORM -->
+  <section class="section">
+    <div class="container" style="max-width:720px">
+      <div class="text-center reveal" style="margin-bottom:48px">
+        <div class="eyebrow">Apply Now</div>
+        <h2 class="section-title">Start Your Journey with FinCore</h2>
+        <p class="section-sub">Don't see the right role? Send us your application anyway — we're always looking for exceptional talent.</p>
+      </div>
+      <div class="contact-form-card reveal">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input class="form-input" type="text" placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input class="form-input" type="email" placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input class="form-input" type="tel" placeholder="+91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Position Applying For *</label>
+            <select class="form-select">
+              <option>Select a position...</option>
+              <option>Senior Chartered Accountant</option>
+              <option>GST & Tax Compliance Specialist</option>
+              <option>Payroll Processing Manager</option>
+              <option>Junior Bookkeeper</option>
+              <option>Business Development Manager</option>
+              <option>Other / General Application</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Years of Experience</label>
+          <select class="form-select">
+            <option>Select experience level...</option>
+            <option>Fresher (0-1 year)</option>
+            <option>1-3 years</option>
+            <option>3-6 years</option>
+            <option>6-10 years</option>
+            <option>10+ years</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell Us About Yourself *</label>
+          <textarea class="form-textarea" placeholder="Briefly describe your experience, skills, and why you want to join FinCore..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Resume / Portfolio Link (Google Drive / LinkedIn)</label>
+          <input class="form-input" type="url" placeholder="https://...">
+        </div>
+        <button class="form-submit">Submit Application →</button>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding-top:0;border:none"><div class="footer-copy">© 2025 FinCore Accounting.</div><a style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;cursor:pointer" onclick="showPage('home')">← Back to Home</a></div></div></footer>
+</div>
+
+<!-- ============================== CONTACT PAGE ============================== -->
+<div id="page-contact" class="page">
+  <div class="about-hero">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);justify-content:center">Let's Connect</div>
+    <h1 class="page-hero-title">Get in Touch With<br>Our Finance Experts</h1>
+    <p class="page-hero-sub">Book a free 30-minute consultation with a FinCore expert. No commitment, no pressure — just clarity.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-card reveal">
+          <div class="contact-info-title">Contact Information</div>
+          <div class="contact-info-sub">Reach us through any of the channels below. Our team responds within 24 hours on business days.</div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <div class="contact-detail-value">+91 98765 43210</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">hello@fincore.in</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-detail-label">Office</div>
+              <div class="contact-detail-value">Level 5, Infinity IT Park,<br>Malad West, Mumbai 400064</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-detail-label">Business Hours</div>
+              <div class="contact-detail-value">Mon–Sat: 9:00 AM – 7:00 PM IST</div>
+            </div>
+          </div>
+
+          <button class="whatsapp-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.1.547 4.073 1.502 5.789L0 24l6.389-1.464A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-5.002-1.368l-.359-.214-3.72.853.884-3.617-.234-.372A9.818 9.818 0 012.182 12C2.182 6.577 6.577 2.182 12 2.182S21.818 6.577 21.818 12 17.423 21.818 12 21.818z"/></svg>
+            Chat on WhatsApp
+          </button>
+
+          <div style="margin-top:32px;padding:20px;background:rgba(255,255,255,0.06);border-radius:14px;border:1px solid rgba(255,255,255,0.1)">
+            <div style="color:rgba(255,255,255,0.5);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Average Response Time</div>
+            <div style="font-size:24px;font-weight:800;color:white">Under 4 Hours</div>
+            <div style="color:rgba(255,255,255,0.4);font-size:13px;margin-top:4px">On all business days</div>
+          </div>
+        </div>
+
+        <div class="contact-form-card reveal reveal-delay-1">
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--text);letter-spacing:-0.5px;margin-bottom:8px">Book a Free Consultation</h3>
+          <p style="color:var(--text-muted);font-size:14px;margin-bottom:32px">Fill in the form below and a FinCore expert will contact you within 4 business hours.</p>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input class="form-input" type="text" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Business Name *</label>
+              <input class="form-input" type="text" placeholder="Company name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input class="form-input" type="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input class="form-input" type="tel" placeholder="+91 98765 43210">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Business Type</label>
+              <select class="form-select">
+                <option>Select industry...</option>
+                <option>Manufacturing</option>
+                <option>Retail</option>
+                <option>E-Commerce</option>
+                <option>Healthcare</option>
+                <option>Startup</option>
+                <option>Professional Services</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Service Needed</label>
+              <select class="form-select">
+                <option>Select service...</option>
+                <option>Bookkeeping</option>
+                <option>GST Compliance</option>
+                <option>Payroll Management</option>
+                <option>Financial Reporting</option>
+                <option>Virtual CFO</option>
+                <option>BPO Services</option>
+                <option>All / Not Sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tell Us About Your Business Needs</label>
+            <textarea class="form-textarea" placeholder="Describe your current accounting challenges, team size, and what you're looking for..."></textarea>
+          </div>
+          <button class="form-submit" onclick="this.textContent='✓ Request Sent! We'll contact you within 4 hours.'">Send Consultation Request →</button>
+          <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:14px">🔒 Your information is secure and will never be shared with third parties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding-top:0;border:none"><div class="footer-copy">© 2025 FinCore Accounting.</div><a style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;cursor:pointer" onclick="showPage('home')">← Back to Home</a></div></div></footer>
+</div>
+
+<script>
+// PAGE NAVIGATION
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Re-trigger reveal animations
+  setTimeout(initReveal, 100);
+}
+
+// THEME TOGGLE
+const toggle = document.getElementById('themeToggle');
+let dark = false;
+toggle.addEventListener('click', () => {
+  dark = !dark;
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  toggle.textContent = dark ? '☀️' : '🌙';
+});
+
+// STICKY NAVBAR
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// MOBILE MENU
+function toggleMobile() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('open');
+}
+
+// FAQ
+function toggleFaq(el) {
+  const wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+  if (!wasOpen) el.classList.add('open');
+}
+
+// TESTIMONIALS CAROUSEL
+let testiOffset = 0;
+function scrollTesti(dir) {
+  const track = document.getElementById('testiTrack');
+  const cardWidth = 404;
+  const maxOffset = (track.children.length - 2) * cardWidth;
+  testiOffset = Math.max(0, Math.min(maxOffset, testiOffset + dir * cardWidth));
+  track.style.transform = `translateX(-${testiOffset}px)`;
+  track.style.transition = 'transform 0.4s ease';
+}
+
+// SCROLL REVEAL
+function initReveal() {
+  const reveals = document.querySelectorAll('.reveal:not(.visible)');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(r => obs.observe(r));
+}
+initReveal();
+
+// COUNTER ANIMATION
+function animateCounters() {
+  document.querySelectorAll('.counter').forEach(counter => {
+    if (counter.dataset.animated) return;
+    const target = parseInt(counter.dataset.target);
+    const duration = 2000;
+    const start = Date.now();
+    counter.dataset.animated = 'true';
+    const tick = () => {
+      const elapsed = Date.now() - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = Math.floor(ease * target);
+      if (progress < 1) requestAnimationFrame(tick);
+      else counter.textContent = target;
+    };
+    tick();
+  });
+}
+// Trigger counters when stats section is visible
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) animateCounters(); });
+}, { threshold: 0.3 });
+document.querySelectorAll('.stats-section').forEach(s => statsObs.observe(s));
+
+// CAT PILLS INTERACTIVITY
+document.querySelectorAll('.cat-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    pill.closest('.cat-pills').querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
+
+// MOBILE MENU CLOSE ON OUTSIDE CLICK
+document.addEventListener('click', (e) => {
+  const menu = document.getElementById('mobileMenu');
+  const hamburger = document.getElementById('hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
